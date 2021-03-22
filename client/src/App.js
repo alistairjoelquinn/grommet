@@ -74,7 +74,7 @@ export default function App() {
                                     </Layer>
                                 )}
                             </Box>
-                            <Nav direction="row" background="brand" pad="medium" justify="end">
+                            <Nav direction="row" background="brand" pad="small" justify="end">
                                 <Anchor icon={<Home />} hoverIndicator color="dimgrey" />
                                 <Anchor icon={<Notification />} hoverIndicator color="dimgrey" />
                                 <Anchor icon={<ChatOption />} hoverIndicator color="dimgrey" />

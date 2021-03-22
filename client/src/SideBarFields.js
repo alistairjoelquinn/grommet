@@ -1,7 +1,9 @@
-import { Accordion, AccordionPanel, Box, DropButton, Text } from 'grommet';
+import { Accordion, AccordionPanel, Box, Button, DropButton, Form, FormField, Text, TextInput } from 'grommet';
+import { useState } from 'react';
 
 
 const SideBarFields = () => {
+    const [value, setValue] = useState({});
     return (
         <Box
             flex
@@ -11,7 +13,14 @@ const SideBarFields = () => {
             align='center'
             justify='start'
             style={{ paddingTop: '1rem' }}
+            gap="1rem"
         >
+            <FormField label="First Name">
+                <TextInput placeholder="type here" />
+            </FormField>
+            <FormField label="Second Name">
+                <TextInput placeholder="type here" />
+            </FormField>
             <DropButton
                 label="Choose an option"
                 style={{ backgroundColor: 'white' }}
@@ -34,6 +43,20 @@ const SideBarFields = () => {
                     </Box>
                 }
             />
+            <Form
+                value={value}
+                onChange={nextValue => setValue(nextValue)}
+                onReset={() => setValue({})}
+                onSubmit={({ value }) => { }}
+            >
+                <FormField name="name" htmlFor="text-input-id" label="Enquiry Reason">
+                    <TextInput id="text-input-id" name="name" />
+                </FormField>
+                <Box direction="row" gap="medium">
+                    <Button type="submit" primary label="Submit" />
+                    <Button type="reset" label="Reset" />
+                </Box>
+            </Form>
         </Box>
     );
 };
