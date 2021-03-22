@@ -1,5 +1,7 @@
 import { Grommet } from 'grommet';
+
 import AppBar from './AppBar';
+import Typography from './styles/Typography';
 
 const theme = {
     global: {
@@ -14,6 +16,7 @@ const theme = {
 export default function App() {
     return (
         <Grommet theme={theme}>
+            <Typography />
             <AppBar>Alistair Quinn</AppBar>
         </Grommet >
     );
