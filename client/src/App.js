@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Button, Heading, Grommet, Collapsible, ResponsiveContext, Layer } from 'grommet';
-import { Chrome } from 'grommet-icons';
+import { Chrome, FormClose } from 'grommet-icons';
 import { Normalize } from 'styled-normalize';
 
 import AppBar from './AppBar';
@@ -59,6 +59,18 @@ export default function App() {
                                     </Collapsible>
                                 ) : (
                                     <Layer >
+                                        <Box
+                                            background='light-2'
+                                            tag='header'
+                                            justify='end'
+                                            align='center'
+                                            direction='row'
+                                        >
+                                            <Button
+                                                icon={<FormClose />}
+                                                onClick={() => setShowSidebar(false)}
+                                            />
+                                        </Box>
                                         <Box
                                             fill
                                             background='light-2'
