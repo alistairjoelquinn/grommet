@@ -5,11 +5,13 @@ import { Normalize } from 'styled-normalize';
 
 import AppBar from './AppBar';
 import Typography from './styles/Typography';
+import SideBarFields from "./SideBarFields";
 
 const theme = {
     global: {
         colors: {
-            brand: '#EAF4D3'
+            brand: '#EAF4D3',
+            focus: '#FFDF64',
         },
         font: {
             family: 'RobotoMono',
@@ -26,11 +28,10 @@ export default function App() {
         <>
             <Normalize />
             <Typography />
-            <Grommet theme={theme} full>
+            <Grommet theme={theme} full themeMode="dark">
                 <ResponsiveContext.Consumer>
                     {size => (
                         <Box fill>
-
                             <AppBar>
                                 Alistair Quinn
                                 <Heading level='3' margin='none'>Oratorium</Heading>
@@ -39,23 +40,14 @@ export default function App() {
                                     onClick={() => setShowSidebar(!showSidebar)}
                                 />
                             </AppBar>
-
                             <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
-                                <Box flex align='center' justify='center'>
-                                    main body
+                                <Box flex align='center' justify='center' gap="10px" direction="row">
+                                    <Button primary label="Click Me" />
+                                    <Button secondary label="Click Me Next" />
                                 </Box>
                                 {(!showSidebar || size !== 'small') ? (
                                     <Collapsible direction="horizontal" open={showSidebar}>
-                                        <Box
-                                            flex
-                                            width='medium'
-                                            background='light-2'
-                                            elevation='small'
-                                            align='center'
-                                            justify='center'
-                                        >
-                                            side bar
-                                        </Box>
+                                        <SideBarFields />
                                     </Collapsible>
                                 ) : (
                                     <Layer >
