@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, Heading, Grommet, Collapsible, ResponsiveContext, Layer, Nav, Anchor } from 'grommet';
+import { Box, Button, Heading, Grommet, Collapsible, ResponsiveContext, Layer, Nav, Anchor, Clock } from 'grommet';
 import { ChatOption, Chrome, FormClose, Home, Notification } from 'grommet-icons';
 import { Normalize } from 'styled-normalize';
 
@@ -75,6 +75,7 @@ export default function App() {
                                 )}
                             </Box>
                             <Nav direction="row" background="brand" pad="small" justify="end">
+                                <Anchor icon={<Clock type="digital" />} hoverIndicator color="dimgrey" />
                                 <Anchor icon={<Home />} hoverIndicator color="dimgrey" />
                                 <Anchor icon={<Notification />} hoverIndicator color="dimgrey" />
                                 <Anchor icon={<ChatOption />} hoverIndicator color="dimgrey" />
