@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Box, Button, Heading, Grommet, Collapsible, ResponsiveContext, Layer } from 'grommet';
-import { Chrome, FormClose } from 'grommet-icons';
+import { Box, Button, Heading, Grommet, Collapsible, ResponsiveContext, Layer, Nav, Anchor } from 'grommet';
+import { ChatOption, Chrome, FormClose, Home, Notification } from 'grommet-icons';
 import { Normalize } from 'styled-normalize';
 
 import AppBar from './AppBar';
@@ -74,6 +74,11 @@ export default function App() {
                                     </Layer>
                                 )}
                             </Box>
+                            <Nav direction="row" background="brand" pad="medium" justify="end">
+                                <Anchor icon={<Home />} hoverIndicator color="dimgrey" />
+                                <Anchor icon={<Notification />} hoverIndicator color="dimgrey" />
+                                <Anchor icon={<ChatOption />} hoverIndicator color="dimgrey" />
+                            </Nav>
                         </Box>
                     )}
                 </ResponsiveContext.Consumer>

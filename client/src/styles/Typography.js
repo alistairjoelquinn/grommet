@@ -15,6 +15,9 @@ const Typography = createGlobalStyle`
   html {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
+  p,h1, h2,h3,h4,h5,h6,span,div {
+      user-select: none;
+  }
 `;
 
 export default Typography;
