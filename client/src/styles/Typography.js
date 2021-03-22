@@ -5,12 +5,12 @@ import poppins from './fonts/Poppins-Medium.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
-    font-family: Roboto;
-    src: url(${robotoMono}) format('ttf');
+    font-family: RobotoMono;
+    src: url(${robotoMono});
   }
   @font-face {
     font-family: Poppins;
-    src: url(${poppins}) format('ttf');
+    src: url(${poppins});
   }
   html {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
