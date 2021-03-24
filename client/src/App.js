@@ -6,6 +6,7 @@ import { Normalize } from 'styled-normalize';
 import AppBar from './AppBar';
 import Typography from './styles/Typography';
 import SideBarFields from "./SideBarFields";
+import MainHomeArea from "./MainHomeArea";
 
 const theme = {
     global: {
@@ -41,10 +42,7 @@ export default function App() {
                                 />
                             </AppBar>
                             <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
-                                <Box flex align='center' justify='center' gap="10px" direction="row">
-                                    <Button primary label="Click Me" />
-                                    <Button secondary label="Click Me Next" />
-                                </Box>
+                                <MainHomeArea />
                                 {(!showSidebar || size !== 'small') ? (
                                     <Collapsible direction="horizontal" open={showSidebar}>
                                         <SideBarFields />
