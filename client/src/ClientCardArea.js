@@ -16,6 +16,10 @@ const GridStyles = styled.div`
         align-items: center;
         justify-content: center;
     }
+    @media (max-width: 730px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 200px);
+    }
 `;
 
 const ClientCardArea = () => {

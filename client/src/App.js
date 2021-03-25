@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Box, Grommet, Collapsible, ResponsiveContext, Main } from 'grommet';
+import { Grommet, Collapsible, ResponsiveContext, Main } from 'grommet';
 import { Normalize } from 'styled-normalize';
+import styled from "styled-components";
 
 import Typography from './styles/Typography';
 import SideBarFieldsBig from "./SideBarFieldsBig";
@@ -23,6 +24,13 @@ const theme = {
     },
 };
 
+const ContainerStyles = styled.div`
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+`;
+
 export default function App() {
     const [showSidebar, setShowSidebar] = useState(false);
 
@@ -35,18 +43,16 @@ export default function App() {
                     {size => (
                         <Main>
                             <HeaderMain showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-                            <Box fill overflow="scroll">
-                                <Box direction='row' flex>
-                                    <MainHomeArea />
-                                    {(!showSidebar || size !== 'small') ? (
-                                        <Collapsible direction="horizontal" open={showSidebar}>
-                                            <SideBarFieldsBig />
-                                        </Collapsible>
-                                    ) : (
-                                        <SideBarFieldsSmall setShowSidebar={setShowSidebar} />
-                                    )}
-                                </Box>
-                            </Box>
+                            <ContainerStyles>
+                                <MainHomeArea />
+                                {(!showSidebar || size !== 'small') ? (
+                                    <Collapsible direction="horizontal" open={showSidebar}>
+                                        <SideBarFieldsBig />
+                                    </Collapsible>
+                                ) : (
+                                    <SideBarFieldsSmall setShowSidebar={setShowSidebar} />
+                                )}
+                            </ContainerStyles>
                             <Footer />
                         </Main>
                     )}
