@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Grommet, Collapsible, ResponsiveContext } from 'grommet';
+import { Box, Grommet, Collapsible, ResponsiveContext, Main } from 'grommet';
 import { Normalize } from 'styled-normalize';
 
 import Typography from './styles/Typography';
@@ -33,20 +33,22 @@ export default function App() {
             <Grommet theme={theme} full themeMode="dark">
                 <ResponsiveContext.Consumer>
                     {size => (
-                        <Box fill>
+                        <Main>
                             <HeaderMain showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-                            <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
-                                <MainHomeArea />
-                                {(!showSidebar || size !== 'small') ? (
-                                    <Collapsible direction="horizontal" open={showSidebar}>
-                                        <SideBarFieldsBig />
-                                    </Collapsible>
-                                ) : (
-                                    <SideBarFieldsSmall setShowSidebar={setShowSidebar} />
-                                )}
+                            <Box fill overflow="scroll">
+                                <Box direction='row' flex>
+                                    <MainHomeArea />
+                                    {(!showSidebar || size !== 'small') ? (
+                                        <Collapsible direction="horizontal" open={showSidebar}>
+                                            <SideBarFieldsBig />
+                                        </Collapsible>
+                                    ) : (
+                                        <SideBarFieldsSmall setShowSidebar={setShowSidebar} />
+                                    )}
+                                </Box>
                             </Box>
                             <Footer />
-                        </Box>
+                        </Main>
                     )}
                 </ResponsiveContext.Consumer>
             </Grommet >
