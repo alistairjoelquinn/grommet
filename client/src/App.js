@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Box, Button, Heading, Grommet, Collapsible, ResponsiveContext, Layer, Nav, Anchor, Clock } from 'grommet';
-import { ChatOption, Chrome, FormClose, Home, Notification } from 'grommet-icons';
+import { Box, Button, Heading, Grommet, Collapsible, ResponsiveContext, Layer } from 'grommet';
+import { Chrome, FormClose } from 'grommet-icons';
 import { Normalize } from 'styled-normalize';
 
 import AppBar from './AppBar';
 import Typography from './styles/Typography';
-import SideBarFields from "./SideBarFields";
+import SideBarFieldsBig from "./SideBarFieldsBig";
 import MainHomeArea from "./MainHomeArea";
+import Footer from "./Footer";
+import SideBarFieldsSmall from "./SideBarFieldsSmall";
 
 const theme = {
     global: {
@@ -45,39 +47,13 @@ export default function App() {
                                 <MainHomeArea />
                                 {(!showSidebar || size !== 'small') ? (
                                     <Collapsible direction="horizontal" open={showSidebar}>
-                                        <SideBarFields />
+                                        <SideBarFieldsBig />
                                     </Collapsible>
                                 ) : (
-                                    <Layer >
-                                        <Box
-                                            background='light-2'
-                                            tag='header'
-                                            justify='end'
-                                            align='center'
-                                            direction='row'
-                                        >
-                                            <Button
-                                                icon={<FormClose />}
-                                                onClick={() => setShowSidebar(false)}
-                                            />
-                                        </Box>
-                                        <Box
-                                            fill
-                                            background='light-2'
-                                            align='center'
-                                            justify='center'
-                                        >
-                                            sidebar
-                                        </Box>
-                                    </Layer>
+                                    <SideBarFieldsSmall setShowSidebar={setShowSidebar} />
                                 )}
                             </Box>
-                            <Nav direction="row" background="brand" pad="small" justify="end">
-                                <Anchor icon={<Clock type="digital" />} hoverIndicator color="dimgrey" />
-                                <Anchor icon={<Home />} hoverIndicator color="dimgrey" />
-                                <Anchor icon={<Notification />} hoverIndicator color="dimgrey" />
-                                <Anchor icon={<ChatOption />} hoverIndicator color="dimgrey" />
-                            </Nav>
+                            <Footer />
                         </Box>
                     )}
                 </ResponsiveContext.Consumer>

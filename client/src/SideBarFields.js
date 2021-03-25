@@ -1,20 +1,11 @@
 import { Accordion, AccordionPanel, Box, Button, DropButton, Form, FormField, Text, TextInput } from 'grommet';
 import { useState } from 'react';
 
-
 const SideBarFields = () => {
     const [value, setValue] = useState({});
+
     return (
-        <Box
-            flex
-            width='medium'
-            background='light-2'
-            elevation='small'
-            align='center'
-            justify='start'
-            style={{ paddingTop: '1rem' }}
-            gap="1rem"
-        >
+        <>
             <FormField label="First Name">
                 <TextInput placeholder="type here" />
             </FormField>
@@ -47,7 +38,7 @@ const SideBarFields = () => {
                 value={value}
                 onChange={nextValue => setValue(nextValue)}
                 onReset={() => setValue({})}
-                onSubmit={({ value }) => { }}
+                onSubmit={() => { }}
             >
                 <FormField name="name" htmlFor="text-input-id" label="Enquiry Reason">
                     <TextInput id="text-input-id" name="name" />
@@ -57,7 +48,7 @@ const SideBarFields = () => {
                     <Button type="reset" label="Reset" />
                 </Box>
             </Form>
-        </Box>
+        </>
     );
 };
 
