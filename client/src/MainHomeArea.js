@@ -1,4 +1,5 @@
 import { Box, Button } from "grommet";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import ClientCardArea from "./ClientCardArea";
@@ -16,7 +17,9 @@ const MainHomeArea = () => {
     return (
         <MainAreaStyles>
             <Box align='center' justify='center' gap="10px" direction="row">
-                <Button primary label="Click Me" />
+                <Link to="/map">
+                    <Button primary label="Click Me" />
+                </Link>
                 <Button secondary label="Click Me Next" />
             </Box>
             <ClientCardArea />

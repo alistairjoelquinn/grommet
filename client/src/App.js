@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import { Grommet, Collapsible, ResponsiveContext, Main } from 'grommet';
 import { Normalize } from 'styled-normalize';
 import styled from "styled-components";
@@ -9,6 +10,7 @@ import MainHomeArea from "./MainHomeArea";
 import Footer from "./Footer";
 import SideBarFieldsSmall from "./SideBarFieldsSmall";
 import HeaderMain from "./HeaderMain";
+import Map from "./Map";
 
 const theme = {
     global: {
@@ -39,24 +41,27 @@ export default function App() {
             <Normalize />
             <Typography />
             <Grommet theme={theme} full themeMode="dark">
-                <ResponsiveContext.Consumer>
-                    {size => (
-                        <Main>
-                            <HeaderMain showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-                            <ContainerStyles>
-                                <MainHomeArea />
-                                {(!showSidebar || size !== 'small') ? (
-                                    <Collapsible direction="horizontal" open={showSidebar}>
-                                        <SideBarFieldsBig />
-                                    </Collapsible>
-                                ) : (
-                                    <SideBarFieldsSmall setShowSidebar={setShowSidebar} />
-                                )}
-                            </ContainerStyles>
-                            <Footer />
-                        </Main>
-                    )}
-                </ResponsiveContext.Consumer>
+                <BrowserRouter>
+                    <ResponsiveContext.Consumer>
+                        {size => (
+                            <Main>
+                                <HeaderMain showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+                                <ContainerStyles>
+                                    <Route exact path="/" render={MainHomeArea} />
+                                    <Route path="/map" render={Map} />
+                                    {(!showSidebar || size !== 'small') ? (
+                                        <Collapsible direction="horizontal" open={showSidebar}>
+                                            <SideBarFieldsBig />
+                                        </Collapsible>
+                                    ) : (
+                                        <SideBarFieldsSmall setShowSidebar={setShowSidebar} />
+                                    )}
+                                </ContainerStyles>
+                                <Footer />
+                            </Main>
+                        )}
+                    </ResponsiveContext.Consumer>
+                </BrowserRouter>
             </Grommet >
         </>
     );
