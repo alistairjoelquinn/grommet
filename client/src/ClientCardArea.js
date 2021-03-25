@@ -19,6 +19,7 @@ const GridStyles = styled.div`
     @media (max-width: 730px) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 200px);
+        height: 80%;
     }
 `;
 

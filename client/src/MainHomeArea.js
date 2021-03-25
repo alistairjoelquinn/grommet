@@ -9,6 +9,7 @@ const MainAreaStyles = styled.div`
     justify-content: space-evenly;
     flex-direction: column;
     flex: 1;
+    margin-bottom: 2rem;
 `;
 
 const MainHomeArea = () => {
