@@ -23,4 +23,20 @@ export default [
         name: 'Craig Wallerman',
         job: 'Office Supplies Distribution Consultant'
     },
+    {
+        name: 'Brian Smith',
+        job: 'Footballer Turned English Teacher'
+    },
+    {
+        name: 'Amy Jones',
+        job: 'Graphic Designer, UX/UI Expert'
+    },
+    {
+        name: 'Lars Montague',
+        job: 'Criminal Defence Lawyer'
+    },
+    {
+        name: 'Craig Wallerman',
+        job: 'Office Supplies Distribution Consultant'
+    },
 ];

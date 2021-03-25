@@ -7,7 +7,7 @@ import cardData from '../data/cardData';
 const GridStyles = styled.div`
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 200px);
     grid-auto-rows: 200px;
     gap: 2rem;
@@ -15,6 +15,11 @@ const GridStyles = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    @media (max-width: 1100px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 200px);
+        height: 80%;
     }
     @media (max-width: 730px) {
         grid-template-columns: repeat(2, 1fr);
