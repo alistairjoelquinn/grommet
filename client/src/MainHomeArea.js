@@ -1,7 +1,6 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Grid } from "grommet";
-import { Favorite, ShareOption } from "grommet-icons";
+import { Box, Button } from "grommet";
 
-import cardData from '../data/cardData';
+import ClientCardArea from "./ClientCardArea";
 
 const MainHomeArea = () => {
     return (
@@ -10,29 +9,7 @@ const MainHomeArea = () => {
                 <Button primary label="Click Me" />
                 <Button secondary label="Click Me Next" />
             </Box>
-            <Grid
-                rows={["small", "small"]}
-                columns={["small", "small", "small"]}
-                gap="3vw"
-                width="100%"
-            >
-                {cardData.map(card => (
-                    <Card key={card.name} height="small" width="small" background="light-1" gap="none">
-                        <CardHeader pad="20px">{card.name}</CardHeader>
-                        <CardBody pad="20px" style={{ fontSize: '0.8rem', paddingTop: '0' }}>{card.job}</CardBody>
-                        <CardFooter pad={{ horizontal: "small" }} background="light-2">
-                            <Button
-                                icon={<Favorite color="red" />}
-                                hoverIndicator
-                            />
-                            <Button
-                                icon={<ShareOption color="plain" />}
-                                hoverIndicator
-                            />
-                        </CardFooter>
-                    </Card>
-                ))}
-            </Grid>
+            <ClientCardArea />
         </Box >
     );
 };
