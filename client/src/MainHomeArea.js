@@ -5,20 +5,16 @@ import cardData from '../data/cardData';
 
 const MainHomeArea = () => {
     return (
-        <Box flex align='center' justify='center' gap="4rem" direction="column" height>
+        <Box flex align='center' justify='evenly' direction="column">
             <Box align='center' justify='center' gap="10px" direction="row">
                 <Button primary label="Click Me" />
                 <Button secondary label="Click Me Next" />
             </Box>
             <Grid
-                rows={['xxsmall', 'xsmall']}
-                columns={['xsmall', 'small']}
-                gap="small"
-                areas={[
-                    { name: 'header', start: [0, 0], end: [1, 0] },
-                    { name: 'nav', start: [0, 1], end: [0, 1] },
-                    { name: 'main', start: [1, 1], end: [1, 1] },
-                ]}
+                rows={["small", "small"]}
+                columns={["small", "small", "small"]}
+                gap="3vw"
+                width="100%"
             >
                 {cardData.map(card => (
                     <Card key={card.name} height="small" width="small" background="light-1" gap="none">
